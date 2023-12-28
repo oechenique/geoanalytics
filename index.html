@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row {
+            display: flex;
+            height: 300px; /* Establece una altura fija para las filas */
+        }
+
+        .col {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: 0px; /* Espacio entre columnas */
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .button-container {
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .row {
+                flex-direction: column;
+                height: auto; /* Altura automática en dispositivos móviles */
+            }
+
+            .col {
+                margin: 0px 0; /* Agrega espacio entre las columnas en dispositivos móviles */
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto; /* Ajusta automáticamente la altura para mantener la proporción original */
+            object-fit: cover;
+        }
+
+        .button {
+            padding: 8px 16px; /* Reduce el tamaño del botón en dispositivos móviles */
+            font-size: 14px; /* Reduce el tamaño de la fuente en dispositivos móviles */
+        }
+
+        .invisible-cell {
+            position: absolute;
+            bottom: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 350px; /* Ajusta la altura según tus necesidades */
+        }
+
+        .social-icon {
+            margin: 0 5px; /* Elimina el espacio entre los iconos */
+            width: 30px; /* Ajusta el ancho según tus necesidades */
+            height: 30px; /* Ajusta la altura según tus necesidades */
+        }
+        
+        .text-container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .email {
+            font-size: 16px;
+        }
+        
+        .col:hover img {
+            filter: brightness(70%);
+        }
+        
+        .col img {
+            transition: transform 0.3s ease;
+        }
+
+        .col:hover img {
+            transform: scale(1.1);
+        }
+
+        .button {
+            background-color: rgba(54, 69, 79, 0.8); /* Blanco con 90% de opacidad */
+            color: #00FFFF; /* Cyan fluor - puedes ajustar el código de color según tus preferencias */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col">
+            <img src="img\tokyo_toner_map.jpg" alt="tokyo">
+            <div class="button-container">
+                <a class="button" href="https://github.com/oechenique/boundaries.git" target="_blank">Boundaries</a>
+            </div>
+        </div>
+        
+        <div class="col">
+            <img src="img\map_compass.png" alt="compass">
+            <div class="button-container">
+                <a class="button" href="https://github.com/oechenique/geocoding" target="_blank">Geocoding</a>
+            </div>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="img\gis_analytical.png" alt="data_geo">
+            <div class="button-container">
+                <a class="button" href="https://github.com/tu-usuario/repositorio-3" target="_blank">Analytics</a>
+            </div>
+        </div>
+        <div class="col">
+            <img src="img\remote_sensing.png" alt="forest_ndvi">
+            <div class="button-container">
+                <a class="button" href="https://github.com/tu-usuario/repositorio-4" target="_blank">Remote Sensing</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="img\contour_up.png" alt="link_social">
+            <!-- Celda invisible con tres iconos -->
+            <div class="invisible-cell">
+    <!-- Cambia los enlaces y los íconos según tus necesidades -->
+                <a class="social-icon" href="https://www.linkedin.com/in/gaston-echenique/" target="_blank">
+                    <img src="https://freelogopng.com/images/all_img/1656994981linkedin-icon-png.png" alt="LinkedIn">
+                </a>
+                <a class="social-icon" href="https://twitter.com/GastonEchenique" target="_blank">
+                    <img src="https://freelogopng.com/images/all_img/1690643591twitter-x-logo-png.png" alt="X">
+                </a>
+                <a class="social-icon" href="https://github.com/oechenique" target="_blank">
+                    <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub">
+                </a>
+            </div>
+
+        </div>
+       <div class="col">
+            <img src="img\contour_down.png" alt="personal_info">
+            <div class="text-container">
+                <div class="name">Gastón Echenique</div>
+                <div class="email">gastonechenique@gmail.com</div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
