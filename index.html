@@ -113,9 +113,17 @@
         }
 
         .social-icon {
-            margin: 0 5px; /* Elimina el espacio entre los iconos */
-            width: 10px; /* Ajusta el ancho según tus necesidades */
-            height: 10px; /* Ajusta la altura según tus necesidades */
+            width: 50px;  /* Tamaño más grande */
+            height: 50px;
+            margin: 0 10px;  /* Espacio entre iconos */
+            object-fit: contain;  /* Mantiene proporción */
+            background: transparent;  /* Elimina fondo blanco */
+        }
+        
+        .invisible-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .text-container {
@@ -152,9 +160,11 @@
             background-color: rgba(54, 69, 79, 0.8); /* Blanco con 90% de opacidad */
             color: #00FFFF; /* Cyan fluor - puedes ajustar el código de color según tus preferencias */
         }
+        
         .title {
             color: #00FFFF; /* Color igual al de los botones */
         }
+        
         body {
             font-family: 'Roboto', sans-serif;
         }
