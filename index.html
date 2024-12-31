@@ -1,263 +1,253 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGSK3F2B0N"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-SGSK3F2B0N');
-        </script>
-    <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-WVSDNQHV');</script>
-        <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGSK3F2B0N"></script>
     <script>
-        // Define dataLayer y la función gtag.
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        // IMPORTANTE: NO COPIES NI PEGUES SIN MODIFICAR LA LISTA DE REGIONES
-        // Configura el consentimiento predeterminado para regiones concretas según tus requisitos
-        gtag('consent', 'default', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied',
-         'regions':[<list of ISO 3166-2 region codes>]
-        });
-        // Define el consentimiento predeterminado para el resto de las regiones según tus requisitos
-        gtag('consent', 'default', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied'
-        });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SGSK3F2B0N');
     </script>
-    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/909cbcee60c9136963ec06d3ad0e5994.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WVSDNQHV');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+    // Define dataLayer y la función gtag.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // Configura el consentimiento predeterminado para Europa (GDPR).
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'regions': ['EU']
+    });
+
+    // Configura el consentimiento predeterminado para el resto de las regiones.
+    gtag('consent', 'default', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+    });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Python Applied to GIS for Analytics">
+    <meta name="description" content="Python and GIS for Data Science and AI">
     <meta name="author" content="Gaston Echenique">
-    <meta name="keywords" content="python,gis,analytics,spatial">
-    <meta property="og:title" content="GeoAnalytics">
-    <meta property="og:description" content="Unlock the power of Python in Geographic Information Systems (GIS) for advanced Analytics">
-    <meta property="og:image" content="img/web_view.webp">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:image" content="img/web_view.webp">
-    <meta property="linkedin:title" content="GeoAnalytics">
-    <meta property="linkedin:description" content="Unlock the power of Python in Geographic Information Systems (GIS) for advanced Analytics">
-    <meta property="linkedin:image" content="img/web_view.webp">
+    <title>GIS and Python</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <style>
         body, html {
-            height: 100%;
             margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
             display: flex;
             flex-direction: column;
         }
 
         .row {
             display: flex;
-            height: 300px; /* Establece una altura fija para las filas */
+            flex-wrap: wrap;
         }
 
         .col {
-            flex: 1;
+            flex: 1 1 50%;
+            height: 300px; /* altura fija */
+            min-height: 300px; /* asegura altura mínima */
+            position: relative;
             overflow: hidden;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            margin: 0px; /* Espacio entre columnas */
         }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .button-container {
-            position: absolute;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        .button {
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background-color: #2980b9;
-        }
-        
-        @media only screen and (max-width: 600px) {
-            .row {
-                flex-direction: column;
-                height: auto; /* Altura automática en dispositivos móviles */
-            }
-
-            .col {
-                margin: 0px 0; /* Agrega espacio entre las columnas en dispositivos móviles */
-            }
-        }
-
-        img {
-            width: 100%;
-            height: auto; /* Ajusta automáticamente la altura para mantener la proporción original */
-            object-fit: cover;
-        }
-
-        .button {
-            padding: 8px 16px; /* Reduce el tamaño del botón en dispositivos móviles */
-            font-size: 14px; /* Reduce el tamaño de la fuente en dispositivos móviles */
-        }
-
-        .invisible-cell {
-            position: absolute;
-            bottom: 10;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100px;
-            height: 350px; /* Ajusta la altura según tus necesidades */
-        }
-
-        .social-icon {
-            width: 50px;  /* Tamaño más grande */
-            height: 50px;
-            margin: 0 1px;  /* Espacio entre iconos */
-            object-fit: contain;  /* Mantiene proporción */
-            background: transparent;  /* Elimina fondo blanco */
-        }
-        
-        .invisible-cell {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .text-container {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            text-align: center;
-            color: #fff;
-        }
-
-        .name {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .email {
-            font-size: 16px;
-        }
-        
-        .col:hover img {
-            filter: brightness(70%);
-        }
-        
         .col img {
-            transition: transform 0.3s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .col img[src=""] {
+            content: url('img/placeholder.png'); /* Default image if none provided */
         }
 
         .col:hover img {
             transform: scale(1.1);
+            filter: brightness(70%);
+        }
+
+        .button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
         }
 
         .button {
-            background-color: rgba(54, 69, 79, 0.8); /* Blanco con 90% de opacidad */
-            color: #00FFFF; /* Cyan fluor - puedes ajustar el código de color según tus preferencias */
-        }
-        
-        .title {
-            color: #00FFFF; /* Color igual al de los botones */
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #00FFFF;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
         }
 
+        .button:hover {
+            background-color: #001F3F;
+        }
+
+        .hover-description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .col:hover .hover-description {
+            transform: translateY(0);
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer-section {
+            flex: 1;
+        }
+
+        .footer-section p {
+            margin: 10px 0;
+        }
+
+        .footer img {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+        }
+
+        .footer-section a {
+            text-decoration: none; /* Elimina el subrayado */
+        }
+
+        .footer-section a:hover {
+            text-decoration: none; /* También asegura que no aparezca al pasar el mouse */
+        }
+
+        @media (max-width: 600px) {
+            .col {
+                flex: 1 1 100%;
+            }
+
+            .button {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="row">
-        <div class="col">
-            <img src="img\tokyo_toner_map.webp" alt="tokyo">
-            <div class="button-container">
-                <a class="button" href="https://github.com/oechenique/boundaries.git" target="_blank">Boundaries</a>
-            </div>
-        </div>
-        
-        <div class="col">
-            <img src="img\map_compass.webp" alt="compass">
-            <div class="button-container">
-                <a class="button" href="https://github.com/oechenique/geocoding" target="_blank">Geocoding</a>
-            </div>
-        </div>        
-    </div>
-    <div class="row">
-        <div class="col">
-            <img src="img\gis_analytical.webp" alt="data_geo">
-            <div class="button-container">
-                <a class="button" href="https://github.com/oechenique/analytics" target="_blank">Analytics</a>
-            </div>
-        </div>
-        <div class="col">
-            <img src="img\remote_sensing.webp" alt="forest_ndvi">
-            <div class="button-container">
-                <a class="button" href="https://github.com/oechenique/remote_sensing" target="_blank">Remote Sensing</a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <img src="img\contour_up.webp" alt="link_social">
-            <!-- Celda invisible con tres iconos -->
-            <div class="invisible-cell">
-    <!-- Cambia los enlaces y los íconos según tus necesidades -->
-                <a class="social-icon" href="https://www.linkedin.com/in/gaston-echenique/" target="_blank">
-                    <img src="https://freelogopng.com/images/all_img/1656994981linkedin-icon-png.png" alt="LinkedIn">
-                </a>
-                <a class="social-icon" href="https://twitter.com/GastonEchenique" target="_blank">
-                    <img src="https://freelogopng.com/images/all_img/1690643591twitter-x-logo-png.png" alt="X">
-                </a>
-                <a class="social-icon" href="https://github.com/oechenique" target="_blank">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ExGUTEwAQn95uM4KUU-OZ7Zz1n2lDrnXfw&s" alt="GitHub">
-                </a>
-                <a class="social-icon" href="https://discord.com/users/gastonechenique" target="_blank">
-                    <img src="https://static.vecteezy.com/system/resources/previews/006/892/625/non_2x/discord-logo-icon-editorial-free-vector.jpg" alt="Discord">
-                </a>
-            </div>
 
+<div class="row">
+    <div class="col">
+        <img src="img\osaka_map.webp" alt="Python Basics">
+        <div class="button-container">
+            <a class="button" href="https://github.com/oechenique/python-gis-basics">Python Basics</a>
         </div>
-       <div class="col">
-            <img src="img\contour_down.webp" alt="personal_info">
-            <div class="text-container">
-                <div class="name">Gastón Echenique</div>
-                <div class="email title">GIS Data Scientist | AI & ML Instructor</div>
+        <div class="hover-description">Learn the foundations of Python and set up your environment for GIS.</div>
+    </div>
+    <div class="col">
+        <img src="img\torii_geocoding.webp" alt="Geocoding">
+        <div class="button-container">
+            <a class="button" href="https://github.com/oechenique/Geocoding">Geocoding</a>
         </div>
+        <div class="hover-description">Explore geocoding and integrate location data into your workflows.</div>
     </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <img src="img\gis_analytical.webp" alt="Spatial Analysis">
+        <div class="button-container">
+            <a class="button" href="https://github.com/oechenique/analytics">Spatial Analysis</a>
+        </div>
+        <div class="hover-description">Analyze spatial data with Python using GeoPandas.</div>
+    </div>    
+    <div class="col">
+        <img src="img\data_modeler.webp" alt="Data Engineering">
+        <div class="button-container">
+            <a class="button" href="https://github.com/oechenique/data-engineering">Data Engineering</a>
+        </div>
+        <div class="hover-description">Build and manage spatial data pipelines and databases efficiently.</div>
+    </div>    
+</div>
+
+<div class="row">
+    <div class="col">
+        <img src="img\remote_sensing.webp" alt="Remote Sensing">
+        <div class="button-container">
+            <a class="button" href="https://github.com/oechenique/remote_sensing">Remote Sensing</a>
+        </div>
+        <div class="hover-description">Apply remote sensing techniques and machine learning to satellite data.</div>
     </div>
+    <div class="col">
+        <img src="img\smart_urban.webp" alt="AI & Predictions">
+        <div class="button-container">
+            <a class="button" href="https://github.com/oechenique/ai-predictions">AI & Predictions</a>
+        </div>
+        <div class="hover-description">Use AI and machine learning to solve complex spatial problems.</div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-section">
+        <p style="color: #00FFFF; font-size: 32px; margin: 0 0 2px 0;">Gastón Echenique</p>
+        <p style="color: #00FFFF; font-size: 16px;">GIS Data Scientist | AI & ML Instructor</p>
+    </div>
+    <div class="footer-section">
+        <a href="https://www.linkedin.com/in/gaston-echenique/" target="_blank">
+            <img src="https://www.iconsdb.com/icons/preview/color/00FFFF/linkedin-3-xxl.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/oechenique" target="_blank">
+            <img src="https://www.iconsdb.com/icons/preview/color/00FFFF/github-9-xxl.png" alt="GitHub">
+        </a>
+        <a class="social-icon" href="https://twitter.com/GastonEchenique" target="_blank">
+            <img src="https://www.iconsdb.com/icons/preview/color/00FFFF/twitter-x-xxl.png" alt="X">
+        </a>
+        <a href="https://discord.com/users/gastonechenique" target="_blank">
+            <img src="https://www.iconsdb.com/icons/preview/color/00FFFF/discord-xxl.png" alt="Discord">
+        </a>
+    </div>
+</div>
+
 </body>
 </html>
