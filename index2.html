@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGSK3F2B0N"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SGSK3F2B0N');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WVSDNQHV');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+    // Define dataLayer y la función gtag.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // Configura el consentimiento predeterminado para Europa (GDPR).
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'regions': ['EU']
+    });
+
+    // Configura el consentimiento predeterminado para el resto de las regiones.
+    gtag('consent', 'default', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+    });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Python and GIS for Data Science and AI">
-    <meta name="author" content="Gastón Echenique">
+    <meta name="author" content="Gaston Echenique">
     <title>GIS and Python</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <style>
@@ -162,7 +205,7 @@
     <div class="col">
         <img src="img\data_modeler.webp" alt="Data Engineering">
         <div class="button-container">
-            <a class="button" href="#">Data Engineering</a>
+            <a class="button" href="https://github.com/oechenique/data-engineering">Data Engineering</a>
         </div>
         <div class="hover-description">Build and manage spatial data pipelines and databases efficiently.</div>
     </div>    
@@ -172,14 +215,14 @@
     <div class="col">
         <img src="img\remote_sensing.webp" alt="Remote Sensing">
         <div class="button-container">
-            <a class="button" href="#">Remote Sensing</a>
+            <a class="button" href="https://github.com/oechenique/remote_sensing">Remote Sensing</a>
         </div>
         <div class="hover-description">Apply remote sensing techniques and machine learning to satellite data.</div>
     </div>
     <div class="col">
         <img src="img\smart_urban.webp" alt="AI & Predictions">
         <div class="button-container">
-            <a class="button" href="#">AI & Predictions</a>
+            <a class="button" href="https://github.com/oechenique/ai-predictions">AI & Predictions</a>
         </div>
         <div class="hover-description">Use AI and machine learning to solve complex spatial problems.</div>
     </div>
