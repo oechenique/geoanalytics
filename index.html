@@ -70,6 +70,73 @@
     <meta name="linkedin:description" content="Learn how Python empowers Geographic Information Systems (GIS) for advanced analytics and AI.">
     <meta name="linkedin:image" content="https://oechenique.github.io/geoanalytics/img/terrain_hologram_cyberpunk.webp">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <script>
+    const i18n = {
+        en: {
+            btn1: "Python Basics",    desc1: "Learn the foundations of Python and set up your environment for GIS.",
+            btn2: "Geocoding",        desc2: "Explore geocoding and integrate location data into your workflows.",
+            btn3: "Spatial Analysis", desc3: "Analyze spatial data with Python using GeoPandas.",
+            btn4: "Data Engineering", desc4: "Build and manage spatial data pipelines and databases efficiently.",
+            btn5: "Remote Sensing",   desc5: "Apply remote sensing techniques and machine learning to satellite data.",
+            btn6: "AI & Predictions", desc6: "Use AI and machine learning to solve complex spatial problems.",
+            role: "GIS Data Engineer | AI & ML Instructor",
+            cert: "AWS AI Practitioner"
+        },
+        es: {
+            btn1: "Python Básico",    desc1: "Aprende los fundamentos de Python y configura tu entorno para GIS.",
+            btn2: "Geocodificación",  desc2: "Explora geocodificación e integra datos de localización en tus flujos.",
+            btn3: "Análisis Espacial",desc3: "Analiza datos espaciales con Python usando GeoPandas.",
+            btn4: "Ingeniería de Datos", desc4: "Construye y gestiona pipelines y bases de datos espaciales eficientemente.",
+            btn5: "Teledetección",    desc5: "Aplica técnicas de teledetección y machine learning a datos satelitales.",
+            btn6: "IA & Predicciones",desc6: "Usa IA y machine learning para resolver problemas espaciales complejos.",
+            role: "GIS Data Engineer | Instructor IA & ML",
+            cert: "AWS AI Practitioner"
+        },
+        pt: {
+            btn1: "Python Básico",    desc1: "Aprenda os fundamentos do Python e configure seu ambiente para GIS.",
+            btn2: "Geocodificação",   desc2: "Explore geocodificação e integre dados de localização nos seus fluxos.",
+            btn3: "Análise Espacial", desc3: "Analise dados espaciais com Python usando GeoPandas.",
+            btn4: "Engenharia de Dados", desc4: "Construa e gerencie pipelines e bancos de dados espaciais eficientemente.",
+            btn5: "Sensoriamento Remoto", desc5: "Aplique técnicas de sensoriamento remoto e ML a dados de satélite.",
+            btn6: "IA & Previsões",   desc6: "Use IA e machine learning para resolver problemas espaciais complexos.",
+            role: "GIS Data Engineer | Instrutor de IA & ML",
+            cert: "AWS AI Practitioner"
+        },
+        ja: {
+            btn1: "Python 基礎",      desc1: "PythonとGIS環境構築の基礎を学ぶ。",
+            btn2: "ジオコーディング",  desc2: "ジオコーディングを探求し、位置データをワークフローに統合する。",
+            btn3: "空間分析",         desc3: "GeoPandasを使ってPythonで空間データを分析する。",
+            btn4: "データエンジニアリング", desc4: "空間データパイプラインとデータベースを効率的に構築・管理する。",
+            btn5: "リモートセンシング", desc5: "リモートセンシング技術と機械学習を衛星データに適用する。",
+            btn6: "AI & 予測",        desc6: "AIと機械学習で複雑な空間問題を解決する。",
+            role: "GIS データエンジニア | AI & ML インストラクター",
+            cert: "AWS AI Practitioner"
+        }
+    };
+
+    function detectLang() {
+        const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (lang.startsWith('ja')) return 'ja';
+        if (lang.startsWith('pt')) return 'pt';
+        if (lang.startsWith('es')) return 'es';
+        return 'en';
+    }
+
+    function applyLang() {
+        const t = i18n[detectLang()];
+        const ids = ['btn1','desc1','btn2','desc2','btn3','desc3','btn4','desc4','btn5','desc5','btn6','desc6'];
+        ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = t[id];
+        });
+        const roleEl = document.getElementById('footer-role');
+        if (roleEl) roleEl.textContent = t.role;
+        const certEl = document.getElementById('footer-cert');
+        if (certEl) certEl.textContent = t.cert;
+    }
+
+    document.addEventListener('DOMContentLoaded', applyLang);
+    </script>
     <style>
         body, html {
             margin: 0;
@@ -201,16 +268,16 @@
     <div class="col">
         <img src="img\osaka_map.webp" alt="Python Basics">
         <div class="button-container">
-            <a class="button" href="https://github.com/oechenique/python-gis-basics">Python Basics</a>
+            <a class="button" href="https://github.com/oechenique/python-gis-basics"><span id="btn1">Python Basics</span></a>
         </div>
-        <div class="hover-description">Learn the foundations of Python and set up your environment for GIS.</div>
+        <div class="hover-description" id="desc1">Learn the foundations of Python and set up your environment for GIS.</div>
     </div>
     <div class="col">
         <img src="img\torii_geocoding.webp" alt="Geocoding">
         <div class="button-container">
-            <a class="button" href="https://github.com/oechenique/Geocoding">Geocoding</a>
+            <a class="button" href="https://github.com/oechenique/Geocoding"><span id="btn2">Geocoding</span></a>
         </div>
-        <div class="hover-description">Explore geocoding and integrate location data into your workflows.</div>
+        <div class="hover-description" id="desc2">Explore geocoding and integrate location data into your workflows.</div>
     </div>
 </div>
 
@@ -218,16 +285,16 @@
     <div class="col">
         <img src="img\gis_analytical.webp" alt="Spatial Analysis">
         <div class="button-container">
-            <a class="button" href="https://github.com/oechenique/analytics">Spatial Analysis</a>
+            <a class="button" href="https://github.com/oechenique/analytics"><span id="btn3">Spatial Analysis</span></a>
         </div>
-        <div class="hover-description">Analyze spatial data with Python using GeoPandas.</div>
+        <div class="hover-description" id="desc3">Analyze spatial data with Python using GeoPandas.</div>
     </div>    
     <div class="col">
         <img src="img\data_modeler.webp" alt="Data Engineering">
         <div class="button-container">
-            <a class="button" href="https://github.com/oechenique/data-engineering">Data Engineering</a>
+            <a class="button" href="https://github.com/oechenique/data-engineering"><span id="btn4">Data Engineering</span></a>
         </div>
-        <div class="hover-description">Build and manage spatial data pipelines and databases efficiently.</div>
+        <div class="hover-description" id="desc4">Build and manage spatial data pipelines and databases efficiently.</div>
     </div>    
 </div>
 
@@ -235,23 +302,24 @@
     <div class="col">
         <img src="img\remote_sensing.webp" alt="Remote Sensing">
         <div class="button-container">
-            <a class="button" href="https://github.com/oechenique/remote_sensing">Remote Sensing</a>
+            <a class="button" href="https://github.com/oechenique/remote_sensing"><span id="btn5">Remote Sensing</span></a>
         </div>
-        <div class="hover-description">Apply remote sensing techniques and machine learning to satellite data.</div>
+        <div class="hover-description" id="desc5">Apply remote sensing techniques and machine learning to satellite data.</div>
     </div>
     <div class="col">
         <img src="img\smart_urban.webp" alt="AI & Predictions">
         <div class="button-container">
-            <a class="button" href="https://github.com/oechenique/ai-predictions">AI & Predictions</a>
+            <a class="button" href="https://github.com/oechenique/ai-predictions"><span id="btn6">AI & Predictions</span></a>
         </div>
-        <div class="hover-description">Use AI and machine learning to solve complex spatial problems.</div>
+        <div class="hover-description" id="desc6">Use AI and machine learning to solve complex spatial problems.</div>
     </div>
 </div>
 
 <div class="footer">
     <div class="footer-section">
         <p style="color: #00FFFF; font-size: 32px; margin: 0 0 2px 0;">Gastón Echenique</p>
-        <p style="color: #00FFFF; font-size: 16px;">GIS Data Engineer | AI & ML Instructor</p>
+        <p style="color: #00FFFF; font-size: 16px;" id="footer-role">GIS Data Engineer | AI & ML Instructor</p>
+        <p style="color: #aaa; font-size: 13px; margin: 4px 0 0 0;" id="footer-cert">AWS AI Practitioner</p>
     </div>
     <div class="footer-section">
         <a href="https://www.linkedin.com/in/gaston-echenique/" target="_blank">
@@ -265,6 +333,12 @@
         </a>
         <a href="https://discord.com/users/gastonechenique" target="_blank">
             <img src="img\discord.webp" alt="Discord">
+        </a>
+        <a href="https://www.youtube.com/@geographical-analytics" target="_blank">
+            <img src="img\youtube.webp" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com/gastigeo/" target="_blank">
+            <img src="img\instagram.webp" alt="Instagram">
         </a>
     </div>
 </div>
