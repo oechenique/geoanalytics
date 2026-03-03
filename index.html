@@ -136,6 +136,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', applyLang);
+    window.addEventListener('load', applyLang); // fallback por si DOMContentLoaded ya pasó
     </script>
     <style>
         body, html {
@@ -217,10 +218,12 @@
         .footer {
             display: flex;
             justify-content: space-around;
+            align-items: center;
             padding: 40px 20px;
             background-color: #222;
             color: #fff;
             text-align: center;
+            gap: 20px;
         }
 
         .footer-section {
@@ -231,18 +234,24 @@
             margin: 10px 0;
         }
 
+        .footer-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+        }
+
         .footer img {
             width: 40px;
             height: 40px;
-            margin: 5px;
         }
 
         .footer-section a {
-            text-decoration: none; /* Elimina el subrayado */
+            text-decoration: none;
         }
 
         .footer-section a:hover {
-            text-decoration: none; /* También asegura que no aparezca al pasar el mouse */
+            text-decoration: none;
         }
 
         @media (max-width: 600px) {
@@ -258,6 +267,17 @@
             .footer {
                 flex-direction: column;
                 text-align: center;
+                padding: 30px 16px;
+                gap: 24px;
+            }
+
+            .footer-section {
+                width: 100%;
+            }
+
+            .footer img {
+                width: 36px;
+                height: 36px;
             }
         }
     </style>
@@ -319,27 +339,29 @@
     <div class="footer-section">
         <p style="color: #00FFFF; font-size: 32px; margin: 0 0 2px 0;">Gastón Echenique</p>
         <p style="color: #00FFFF; font-size: 16px;" id="footer-role">GIS Data Engineer | AI & ML Instructor</p>
-        <p style="color: #00FFFF; font-size: 14px; margin: 4px 0 0 0;" id="footer-cert">AWS AI Practitioner</p>
+        <p style="color: #00FFFF; font-size: 13px; margin: 4px 0 0 0;" id="footer-cert">AWS AI Practitioner</p>
     </div>
     <div class="footer-section">
-        <a href="https://www.linkedin.com/in/gaston-echenique/" target="_blank">
-            <img src="img\linkedin.webp" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/oechenique" target="_blank">
-            <img src="img\github.webp" alt="GitHub">
-        </a>
-        <a class="social-icon" href="https://twitter.com/GastonEchenique" target="_blank">
-            <img src="img\twitter.webp" alt="X">
-        </a>
-        <a href="https://discord.com/users/gastonechenique" target="_blank">
-            <img src="img\discord.webp" alt="Discord">
-        </a>
-        <a href="https://www.youtube.com/@geographical-analytics" target="_blank">
-            <img src="img\youtube.webp" alt="YouTube">
-        </a>
-        <a href="https://www.instagram.com/gastigeo/" target="_blank">
-            <img src="img\instagram.webp" alt="Instagram">
-        </a>
+        <div class="footer-icons">
+            <a href="https://www.linkedin.com/in/gaston-echenique/" target="_blank">
+                <img src="img\linkedin.webp" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/oechenique" target="_blank">
+                <img src="img\github.webp" alt="GitHub">
+            </a>
+            <a class="social-icon" href="https://twitter.com/GastonEchenique" target="_blank">
+                <img src="img\twitter.webp" alt="X">
+            </a>
+            <a href="https://discord.com/users/gastonechenique" target="_blank">
+                <img src="img\discord.webp" alt="Discord">
+            </a>
+            <a href="https://www.youtube.com/@geographical-analytics" target="_blank">
+                <img src="img\youtube.webp" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/gastigeo/" target="_blank">
+                <img src="img\instagram.webp" alt="Instagram">
+            </a>
+        </div>
     </div>
 </div>
 
