@@ -115,7 +115,6 @@
     };
 
     function detectLang() {
-        // 1. Override manual por URL: ?lang=es / ?lang=pt / ?lang=ja
         const urlParams = new URLSearchParams(window.location.search);
         const forced = urlParams.get('lang');
         if (forced && i18n[forced]) {
@@ -123,18 +122,17 @@
             return forced;
         }
 
-        // 2. Persistencia: idioma guardado en sesión previa
         const saved = localStorage.getItem('geodojo_lang');
         if (saved && i18n[saved]) return saved;
 
-        // 3. Autodetección robusta: recorre TODA la lista de idiomas del browser
-        const langs = navigator.languages || [navigator.language || 'en'];
-        for (let lang of langs) {
-            lang = lang.toLowerCase();
-            if (lang.startsWith('ja')) return 'ja';
-            if (lang.startsWith('pt')) return 'pt';
-            if (lang.startsWith('es')) return 'es';
-        }
+        const langs = (navigator.languages && navigator.languages.length)
+            ? navigator.languages.map(l => l.toLowerCase())
+            : [(navigator.language || 'en').toLowerCase()];
+
+        // Prioridad de negocio: español > portugués > japonés
+        if (langs.some(lang => lang.startsWith('es'))) return 'es';
+        if (langs.some(lang => lang.startsWith('pt'))) return 'pt';
+        if (langs.some(lang => lang.startsWith('ja'))) return 'ja';
 
         return 'en';
     }
