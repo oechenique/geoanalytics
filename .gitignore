@@ -1,0 +1,13 @@
+# Local Jekyll build (GitHub Pages builds the site itself)
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
