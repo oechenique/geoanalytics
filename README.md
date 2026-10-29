@@ -54,5 +54,5 @@ Open `index.html` in a browser. To preview another language, add `?lang=es` (or 
 ## License and attribution
 
 - Code (`index.html`): [MIT](LICENSE).
-- Images in `img/` and `docs/img/`: **⚠ PENDING: source to be confirmed (own / AI-generated / third party)**.
+- Images in `img/` and `docs/img/`: © Gastón Echenique, all rights reserved. They are original: some were generated with my own Python notebooks, others created with the help of AI (ChatGPT). They are not covered by the MIT license.
 - Social icons are the trademarks of their respective platforms.
